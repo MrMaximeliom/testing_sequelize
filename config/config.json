@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "moayed",
+    "password": "1a79a001973e92c89aa42c0c9c8a8bf3e138132bc81bad4a5e03a8b908b1e317",
+    "database": "testing",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "moayed",
+    "password": "1a79a001973e92c89aa42c0c9c8a8bf3e138132bc81bad4a5e03a8b908b1e317",
+    "database": "testing",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "moayed",
+    "password": "1a79a001973e92c89aa42c0c9c8a8bf3e138132bc81bad4a5e03a8b908b1e317",
+    "database": "testing",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
