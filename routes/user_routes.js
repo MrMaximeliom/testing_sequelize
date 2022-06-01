@@ -1,13 +1,17 @@
 import { Router } from 'express';
 import db from '../models';
 const router = Router();
+import { authJwt } from "../middlewares";
 
-router.get('/', async (req, res) => {
+
+router.get('/', [authJwt.verifyToken,authJwt.isAdmin],async (req, res) => {
 	const users = await db.User.findAll();
 	return res.send(users);
 	
   });
-router.post('/', async (req, res) => {
+router.post('/', 
+[authJwt.verifyToken,authJwt.isAdmin],
+async (req, res) => {
 	const user = await db.User.create({
 	  
 	  username: req.body.username,

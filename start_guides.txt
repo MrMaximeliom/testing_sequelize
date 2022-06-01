@@ -1,15 +1,20 @@
 # create new sequlize setup from project root folder
 sequlize init
+
 # create new migration and table file
 sequelize model:generate --name User --attributes firstName:string,lastName:string,email:string,username:string
+
 # change sequelize config file params
 add databse_username,database_name,dialect_type ...etc
+
 # table name will be plural by default user => users in database
 # reference to db connection from index in models folder
 # access tables using db object => db.table_name
+
 # create new migration file to add or remove or update fields use this command
 npx sequelize-cli migration:create --name modify_users_add_new_fields
-use similar code like this
+
+#use similar code like this
 return [ queryInterface.addColumn(
       'users',
       'last_name',
