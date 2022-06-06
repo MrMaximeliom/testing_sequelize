@@ -30,6 +30,8 @@ db.sequelize.sync().then(() => {
 app.listen(process.env.PORT,()=>{
       console.log(`server now is running on port:${process.env.PORT}`)
   })
-  initial()
+
+  
+
   
   })

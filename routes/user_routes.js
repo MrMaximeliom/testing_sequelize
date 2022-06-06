@@ -1,7 +1,8 @@
 import { Router } from 'express';
 import db from '../models';
 const router = Router();
-import { authJwt } from "../middlewares";
+import { authJwt , verifySignUp } from "../middlewares";
+import controller from "../controllers/auth.controllers"
 
 
 router.get('/', [authJwt.verifyToken,authJwt.isAdmin],async (req, res) => {
@@ -9,21 +10,7 @@ router.get('/', [authJwt.verifyToken,authJwt.isAdmin],async (req, res) => {
 	return res.send(users);
 	
   });
-router.post('/', 
-[authJwt.verifyToken,authJwt.isAdmin],
-async (req, res) => {
-	const user = await db.User.create({
-	  
-	  username: req.body.username,
-      firstName:req.body.firstName,
-      lastName:req.body.lastName,
-      email:req.body.email
-	 
-	});
-  
-	return res.send(user);
-  });
-  
+
 router.get('/:userId', async (req, res) => {
 	const user = await db.User.findByPk(
 	  req.params.userId,
